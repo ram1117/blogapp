@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  after :all do
+    Post.destroy_all
+    User.destroy_all
+  end
   subject do
     User.new(name: 'ram', photo: 'someURL', bio: 'student', posts_counter: 0)
   end
@@ -35,7 +39,7 @@ RSpec.describe User, type: :model do
           author: subject,
           text: "This is my blog no: #{i}",
           comments_counter: 0,
-          likes_counter: 0
+          likes_counter: 0,
         )
       end
       expect(subject.last_three_posts.length).to eql 3

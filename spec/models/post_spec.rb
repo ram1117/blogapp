@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before :all do
-    @user =
+    @user1 =
       User.create(
         name: 'mark',
         photo: 'some_link',
@@ -10,9 +10,13 @@ RSpec.describe Post, type: :model do
         posts_counter: 0,
       )
   end
+  after :all do
+    Post.destroy_all
+    User.destroy_all
+  end
   subject do
     Post.new(
-      author: @user,
+      author: @user1,
       title: 'Blog 1',
       text: 'My first tech blog',
       comments_counter: 0,
@@ -56,11 +60,11 @@ RSpec.describe Post, type: :model do
   describe 'check model methods' do
     it '#update_posts_counter' do
       subject.update_posts_counter
-      expect(@user.posts_counter).to eql 1
+      expect(@user1.posts_counter).to eql 1
     end
     it '#last_five_comments' do
       6.times do |i|
-        Comment.create(author: @user, post: subject, text: "comment #{i}")
+        Comment.create(author: @user1, post: subject, text: "comment #{i}")
       end
       expect(subject.last_five_comments.length).to eql 5
     end
