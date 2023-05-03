@@ -112,14 +112,11 @@ To run the project, execute the following command:
 
 ### Run tests
 
-To run tests, run the following command:
+To run rspec tests, run the following command:
 
-TODO === TO be update at the end of final milestone
-
-<!-- 
 ```sh
-  bin/rails test test/models/article_test.rb
-``` -->
+    rspec spec
+``` 
 
 ### Deployment
 
