@@ -4,6 +4,7 @@ class PostssController < ActionController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @user = User.find(params[:user])
+    @posts = @user.posts
   end
 end
