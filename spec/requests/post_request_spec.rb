@@ -5,7 +5,7 @@ RSpec.describe 'Posts', type: :request do
       name: 'user 1',
       photo: 'some url link to imgur',
       bio: 'software engineer',
-      posts_counter: 0,
+      posts_counter: 0
     }
     @user = User.create! user_attributes
     post_attributes = {
@@ -13,7 +13,7 @@ RSpec.describe 'Posts', type: :request do
       title: 'first blog post',
       text: 'my first technical blog post about rspec in rails',
       comments_counter: 0,
-      likes_counter: 0,
+      likes_counter: 0
     }
     @post = Post.create! post_attributes
   end
@@ -25,7 +25,7 @@ RSpec.describe 'Posts', type: :request do
     end
     it 'correct template is rendered' do
       get '/users/1/posts/'
-      expect(response).to render_template ('posts/index')
+      expect(response).to render_template('posts/index')
     end
     it 'response body has placeholder text' do
       get '/users/1/posts/'
@@ -40,7 +40,7 @@ RSpec.describe 'Posts', type: :request do
     end
     it 'correct template is rendered' do
       get '/users/1/posts/1'
-      expect(response).to render_template ('posts/show')
+      expect(response).to render_template('posts/show')
     end
     it 'response body has placeholder text' do
       get '/users/1/posts/1'

@@ -5,7 +5,7 @@ RSpec.describe 'Users', type: :request do
       name: 'user 1',
       photo: 'some url link to imgur',
       bio: 'software engineer',
-      posts_counter: 0,
+      posts_counter: 0
     }
     @user = User.create! @valid_attributes
   end
