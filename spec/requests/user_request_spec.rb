@@ -25,7 +25,7 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'get/user=[:id]' do
+  describe 'get /user=[:id]' do
     it 'is valid response' do
       get '/users/1'
       expect(response).to have_http_status(200)
