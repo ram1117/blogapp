@@ -9,5 +9,10 @@
 <%= render 'shared/posttile', post: post %>
 <% end %>
 </div>
-<button class="btn-all-posts" type="button">See all posts</button>
+
+<%= link_to user_posts_path(@user.id),class: 'btn-link'  do%> 
+<button class="btn-all-posts" type="button">
+See all posts
+</button>
+<% end %>
 </div>
