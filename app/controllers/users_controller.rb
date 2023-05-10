@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  layout 'users'
   def index
     @users = User.all
+    @title = 'Users'
   end
 
   def show

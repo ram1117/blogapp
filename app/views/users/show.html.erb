@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogapp</title>
-</head>
-<body>
-  <h1>User details by ID</h1>
-  <img src="" alt="" />
-  <p>Name</p>
-  <p>Bio</p>
-  <ul>
-  <li>Post 1</li>
-  <li>Post 2</li>
-  <li>Post 3</li>
-  </ul>
-</body>
-</html>
+<div class="user-detail">
+<%= render "shared/usertile",user: @user  %>
+<div class="user-bio">
+<h3>Bio:</h3>
+<%= @user.bio %>
+</div>
+<div class="posts">
+<% @user.last_three_posts.each do |post| %>
+<%= render 'shared/posttile', post: post %>
+<% end %>
+</div>
+<button class="btn-all-posts" type="button">See all posts</button>
+</div>
