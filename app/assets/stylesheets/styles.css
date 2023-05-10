@@ -76,12 +76,15 @@ a {
   align-self: flex-end;
 }
 
-.btn-all-posts {
-  /* width: 10%; */
-
-  /* margin: 2rem auto; */
+.btn-all-posts,.btn-pagination {
   padding: 1rem;
   cursor: pointer;
+}
+
+.btn-pagination{
+  width: 10%;
+  margin: 2rem auto;
+  
 }
 
 .comments-container {
