@@ -76,15 +76,15 @@ a {
   align-self: flex-end;
 }
 
-.btn-all-posts,.btn-pagination {
+.btn-all-posts,
+.btn-pagination {
   padding: 1rem;
   cursor: pointer;
 }
 
-.btn-pagination{
+.btn-pagination {
   width: 10%;
   margin: 2rem auto;
-  
 }
 
 .comments-container {
