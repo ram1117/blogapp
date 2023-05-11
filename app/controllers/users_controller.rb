@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   layout 'users'
   def index
     @users = User.all
-    @title = 'Users'
+    @current_user = ApplicationController.current_user
   end
 
   def show
