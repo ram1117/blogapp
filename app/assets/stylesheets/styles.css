@@ -93,11 +93,11 @@ a {
   padding: 1rem;
 }
 
-.current-user{
+.current-user {
   float: right;
 }
 
-.posts_form{
+.posts_form {
   clear: both;
   width: 80%;
   margin: 1rem auto;
@@ -105,21 +105,21 @@ a {
   flex-direction: column;
 }
 
-.posts_form>input{
-  margin:1rem 0;
+.posts_form > input {
+  margin: 1rem 0;
 }
 
-.posts_form>input:last-child{
+.posts_form > input:last-child {
   width: 10%;
 }
 
-.comment-form{
+.comment-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem;
 }
 
-.likes-btn{
+.likes-btn {
   cursor: pointer;
 }

@@ -1,4 +1,5 @@
   <div id="content">
+  <% unless @current_user==nil%>
   <ul>
   <p class="current-user">Logged in as: <%= @current_user.name%></p>
   <%= render "shared/posts_form", url:user_posts_path(@current_user.id) %>
@@ -6,4 +7,7 @@
     <%= render "shared/usertile", user: user %>
   <% end %>
   </ul>
+  <%else%>
+  <h3>Add some user to the database</h3>
+  <%end%>
   </div>

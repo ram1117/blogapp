@@ -3,9 +3,8 @@ class LikesController < ApplicationController
     user = ApplicationController.current_user
     post = Post.find(params[:post_id])
     new_like = Like.create(post: post, author: user)
-    if new_like.save
+    if new_like.valid?
       flash[:success] = 'commented successfully'
-      # redirect_to user_post_path(user.id, post.id)
       respond_to do |format|
         format.html { redirect_to request.referrer, notice: 'Liked' }
       end

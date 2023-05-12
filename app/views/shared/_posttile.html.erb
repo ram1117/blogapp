@@ -2,6 +2,7 @@
   
   <div class="post-tile">
   <h3>Post #: <%= post.id %> <%=post.title %></h3>
+  <h4>Author: <%= post.author.name%></h4>
   <p><%= post.text%></p>
   <%= link_to post_likes_path(post_id: post.id), data:{turbo_method: :post} do %>
   <button class="likes-btn">Like</button>

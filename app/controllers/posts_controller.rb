@@ -14,7 +14,7 @@ class PostsController < ApplicationController
         title: input['title'],
         text: input['text'],
         likes_counter: 0,
-        comments_counter: 0,
+        comments_counter: 0
       )
 
     if new_post.save
