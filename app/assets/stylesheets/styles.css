@@ -112,3 +112,10 @@ a {
 .posts_form>input:last-child{
   width: 10%;
 }
+
+.comment-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
