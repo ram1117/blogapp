@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
+  def new
+    @comment = Comment.new
+    @user = ApplicationController.current_user
+  end
+
   def create
     user = ApplicationController.current_user
-    input = params.require(:new_comment).permit(:text)
     post = Post.find(params[:post_id])
-    new_comment = Comment.create(post: post, author: user, text: input['text'])
+    new_comment =
+      Comment.create(post: post, author: user, text: comment_params['text'])
     if new_comment.valid?
       flash[:success] = 'commented successfully'
       respond_to do |format|
@@ -14,5 +19,11 @@ class CommentsController < ApplicationController
     else
       flash[:alert] = 'error creating comment'
     end
+  end
+
+  private
+
+  def comment_params
+    params.require(:new_comment).permit(:text)
   end
 end

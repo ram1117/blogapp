@@ -2,7 +2,9 @@
   <% unless @current_user==nil%>
   <ul>
   <p class="current-user">Logged in as: <%= @current_user.name%></p>
-  <%= render "shared/posts_form", url:user_posts_path(@current_user.id) %>
+  <%= link_to new_user_post_path(user_id: @current_user.id),class:"new-post-btn" do%>
+  <button>Create New Post</button>
+  <%end%>
   <% @users.each do |user| %>
     <%= render "shared/usertile", user: user %>
   <% end %>
