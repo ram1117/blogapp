@@ -119,3 +119,7 @@ a {
   align-items: center;
   margin: 1rem;
 }
+
+.likes-btn{
+  cursor: pointer;
+}

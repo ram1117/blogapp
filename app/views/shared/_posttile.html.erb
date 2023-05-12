@@ -3,6 +3,9 @@
   <div class="post-tile">
   <h3>Post #: <%= post.id %> <%=post.title %></h3>
   <p><%= post.text%></p>
+  <%= link_to post_likes_path(post_id: post.id), data:{turbo_method: :post} do %>
+  <button class="likes-btn">Like</button>
+  <%end%>
   <p class="comments-likes" >Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%> </p>
   </div>
   <%end%>
