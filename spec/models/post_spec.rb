@@ -7,12 +7,10 @@ RSpec.describe Post, type: :model do
         name: 'mark',
         photo: 'some_link',
         bio: 'developer',
-        posts_counter: 0
+        posts_counter: 0,
       )
   end
   after :all do
-    Post.destroy_all
-    User.destroy_all
   end
   subject do
     Post.new(
@@ -20,7 +18,7 @@ RSpec.describe Post, type: :model do
       title: 'Blog 1',
       text: 'My first tech blog',
       comments_counter: 0,
-      likes_counter: 0
+      likes_counter: 0,
     )
   end
   describe 'check post validity' do

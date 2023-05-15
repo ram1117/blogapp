@@ -5,7 +5,7 @@ RSpec.describe 'Users', type: :request do
       name: 'user 1',
       photo: 'some url link to imgur',
       bio: 'software engineer',
-      posts_counter: 0
+      posts_counter: 0,
     }
     @user = User.create! @valid_attributes
   end
@@ -21,7 +21,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'response body has placeholder text' do
       get '/users'
-      expect(response.body).to include('List of users')
+      expect(response.body).to include('user 1')
     end
   end
 
@@ -37,7 +37,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'response body has placeholder text' do
       get '/users/1'
-      expect(response.body).to include('User details by ID')
+      expect(response.body).to include('developer')
     end
   end
 end
