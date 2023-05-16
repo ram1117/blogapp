@@ -97,6 +97,11 @@ a {
   float: right;
 }
 
+.btn-log-out{
+  clear: right;
+  float: right;
+}
+
 .posts_form {
   clear: both;
   width: 80%;

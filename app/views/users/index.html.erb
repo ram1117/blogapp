@@ -2,6 +2,7 @@
   <% unless @current_user==nil%>
   <ul>
   <p class="current-user">Logged in as: <%= @current_user.name%></p>
+  <%= button_to "logout", destroy_user_session_path, method: :delete, class:'btn-log-out'  %>
   <%= link_to new_user_post_path(user_id: @current_user.id),class:"new-post-btn" do%>
   <button>Create New Post</button>
   <%end%>
