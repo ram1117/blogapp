@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  before :all do
+  before :example do
     @user2 =
       User.create(
         name: 'Ben',
@@ -18,11 +18,7 @@ RSpec.describe Comment, type: :model do
         likes_counter: 0
       )
   end
-  after :all do
-    Comment.destroy_all
-    Post.destroy_all
-    User.destroy_all
-  end
+
   subject { Comment.new(post: @post2, author: @user2, text: 'Nice blog') }
   describe 'check comment validity' do
     it 'is valid with valid attributes' do

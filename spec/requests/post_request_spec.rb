@@ -16,35 +16,39 @@ RSpec.describe 'Posts', type: :request do
       likes_counter: 0
     }
     @post = Post.create! post_attributes
+    @id = @user.id
+    @post_id = @post.id
   end
 
   describe 'Get /users/[:id]/posts' do
     it 'is valid response' do
-      get '/users/1/posts/'
+      get "/users/#{@id}/posts/"
       expect(response).to have_http_status(200)
     end
     it 'correct template is rendered' do
-      get '/users/1/posts/'
+      get "/users/#{@id}/posts/"
       expect(response).to render_template('posts/index')
     end
     it 'response body has placeholder text' do
-      get '/users/1/posts/'
-      expect(response.body).to include('List of Posts')
+      get "/users/#{@id}/posts/"
+      expect(response.body).to include('first blog post')
     end
   end
 
   describe 'Get /users/[:id]/posts/[:id]' do
     it 'is valid response' do
-      get '/users/1/posts/1'
+      get "/users/#{@id}/posts/#{@post_id}"
       expect(response).to have_http_status(200)
     end
     it 'correct template is rendered' do
-      get '/users/1/posts/1'
+      get "/users/#{@id}/posts/#{@post_id}"
       expect(response).to render_template('posts/show')
     end
     it 'response body has placeholder text' do
-      get '/users/1/posts/1'
-      expect(response.body).to include('List of Posts by a User')
+      get "/users/#{@id}/posts/#{@post_id}"
+      expect(response.body).to include(
+        'my first technical blog post about rspec in rails'
+      )
     end
   end
 end

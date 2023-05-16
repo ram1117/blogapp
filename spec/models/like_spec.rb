@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  before :all do
+  before :example do
     @user3 =
       User.create(
         name: 'Ben',
@@ -17,11 +17,6 @@ RSpec.describe Like, type: :model do
         comments_counter: 0,
         likes_counter: 0
       )
-  end
-  after :all do
-    Like.destroy_all
-    Post.destroy_all
-    User.destroy_all
   end
   subject { Like.new(post: @post3, author: @user3) }
   describe 'check like validity' do

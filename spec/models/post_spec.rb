@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  before :all do
+  before :example do
     @user1 =
       User.create(
         name: 'mark',
@@ -10,10 +10,7 @@ RSpec.describe Post, type: :model do
         posts_counter: 0
       )
   end
-  after :all do
-    Post.destroy_all
-    User.destroy_all
-  end
+
   subject do
     Post.new(
       author: @user1,
