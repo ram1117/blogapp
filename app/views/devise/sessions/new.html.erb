@@ -4,11 +4,11 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="sign-field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:'input-items', placeholder: 'Email' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:'sign-input-items', placeholder: 'Email' %>
   </div>
 
   <div class="sign-field">
-    <%= f.password_field :password, autocomplete: "current-password",class:'input-items', placeholder: 'Password'  %>
+    <%= f.password_field :password, autocomplete: "current-password",class:'sign-input-items', placeholder: 'Password'  %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,7 +19,7 @@
   <% end %>
 
   <div class="sign-actions">
-    <%= f.submit "Log in",class:'input-items'  %>
+    <%= f.submit "Log in",class:'sign-input-items'  %>
   </div>
 <% end %>
 

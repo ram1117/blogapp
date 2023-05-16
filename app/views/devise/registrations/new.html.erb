@@ -6,22 +6,22 @@
 
   <div class="sign-field">
     <%= f.label :name,'Full Name' %><br />
-    <%= f.text_field :name,class:'input-items' %>
+    <%= f.text_field :name,class:'sign-input-items' %>
   </div>
 
   <div class="sign-field">
     <%= f.label :bio %><br />
-    <%= f.text_area :bio, size:'25x5', class:'input-items' %>
+    <%= f.text_area :bio, size:'25x5', class:'sign-input-items' %>
   </div>
 
   <div class="sign-field">
     <%= f.label :photo,'Profile photo url' %><br />
-    <%= f.text_field :photo, class:'input-items'  %>
+    <%= f.text_field :photo, class:'sign-input-items'  %>
   </div>
 
   <div class="sign-field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input-items'  %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'sign-input-items'  %>
   </div>
 
   <div class="sign-field">
@@ -29,12 +29,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:'input-items'  %>
+    <%= f.password_field :password, autocomplete: "new-password", class:'sign-input-items'  %>
   </div>
 
-  <div class="field">
+  <div class="sign-field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'input-items'  %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'sign-input-items'  %>
   </div>
 
   <div class="sign-actions">
