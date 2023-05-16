@@ -19,7 +19,7 @@ class PostsController < ApplicationController
         title: post_params['title'],
         text: post_params['text'],
         likes_counter: 0,
-        comments_counter: 0,
+        comments_counter: 0
       )
 
     if @new_post.save
