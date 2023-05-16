@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   layout 'posts'
+  before_action :authenticate_member!
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:author)
@@ -7,18 +9,17 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @current_user = ApplicationController.current_user
+    @current_user = current_user
   end
 
   def create
-    current_user = ApplicationController.current_user
     @new_post =
       Post.new(
         author: current_user,
         title: post_params['title'],
         text: post_params['text'],
         likes_counter: 0,
-        comments_counter: 0
+        comments_counter: 0,
       )
 
     if @new_post.save
