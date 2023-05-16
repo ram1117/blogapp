@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   layout 'posts'
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes(:author)
   end
 
   def new
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
         title: post_params['title'],
         text: post_params['text'],
         likes_counter: 0,
-        comments_counter: 0
+        comments_counter: 0,
       )
 
     if @new_post.save
@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
+    @comments = @post.comments.includes(:author)
   end
 
   private
