@@ -28,7 +28,7 @@ RSpec.describe 'users/[:id]/posts/', type: :system do
   it 'shows some of posts body' do
     visit user_posts_path(@id)
     expect(page).to have_content(
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do '
     )
   end
 

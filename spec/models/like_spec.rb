@@ -7,7 +7,7 @@ RSpec.describe Like, type: :model do
         name: 'Ben',
         photo: 'some_link',
         bio: 'developer',
-        posts_counter: 0,
+        posts_counter: 0
       )
     @post3 =
       Post.create(
@@ -15,10 +15,8 @@ RSpec.describe Like, type: :model do
         title: 'Blog 2',
         text: 'My first tech blog',
         comments_counter: 0,
-        likes_counter: 0,
+        likes_counter: 0
       )
-  end
-  after :all do
   end
   subject { Like.new(post: @post3, author: @user3) }
   describe 'check like validity' do

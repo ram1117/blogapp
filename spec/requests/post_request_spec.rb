@@ -5,7 +5,7 @@ RSpec.describe 'Posts', type: :request do
       name: 'user 1',
       photo: 'some url link to imgur',
       bio: 'software engineer',
-      posts_counter: 0,
+      posts_counter: 0
     }
     @user = User.create! user_attributes
     post_attributes = {
@@ -13,7 +13,7 @@ RSpec.describe 'Posts', type: :request do
       title: 'first blog post',
       text: 'my first technical blog post about rspec in rails',
       comments_counter: 0,
-      likes_counter: 0,
+      likes_counter: 0
     }
     @post = Post.create! post_attributes
     @id = @user.id
@@ -47,7 +47,7 @@ RSpec.describe 'Posts', type: :request do
     it 'response body has placeholder text' do
       get "/users/#{@id}/posts/#{@post_id}"
       expect(response.body).to include(
-        'my first technical blog post about rspec in rails',
+        'my first technical blog post about rspec in rails'
       )
     end
   end

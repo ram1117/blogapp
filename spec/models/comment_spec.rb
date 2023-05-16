@@ -7,7 +7,7 @@ RSpec.describe Comment, type: :model do
         name: 'Ben',
         photo: 'some_link',
         bio: 'developer',
-        posts_counter: 0,
+        posts_counter: 0
       )
     @post2 =
       Post.create(
@@ -15,7 +15,7 @@ RSpec.describe Comment, type: :model do
         title: 'Blog 2',
         text: 'My first tech blog',
         comments_counter: 0,
-        likes_counter: 0,
+        likes_counter: 0
       )
   end
 

@@ -23,7 +23,7 @@ RSpec.configure do |config|
     Comment.destroy_all
     Post.destroy_all
     User.destroy_all
-    require_relative './test_data.rb'
+    require_relative './test_data'
   end
 
   config.expect_with :rspec do |expectations|

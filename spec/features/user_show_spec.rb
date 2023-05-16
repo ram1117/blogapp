@@ -23,7 +23,7 @@ RSpec.describe 'users/[:id]', type: :system do
   it "shows user's bio" do
     visit user_path(@id)
     expect(page).to have_content(
-      'I am full stack web developer. Interested in Rails as backend and React as frontend',
+      'I am full stack web developer. Interested in Rails as backend and React as frontend'
     )
   end
 
