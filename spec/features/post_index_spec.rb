@@ -9,6 +9,7 @@ RSpec.describe 'users/[:id]/posts/', type: :system do
     require_relative '../test_data.rb'
     @id = User.first.id
   end
+
   it "shows user's profile picture" do
     visit user_posts_path(@id)
     expect(page.all('img').length).to eql 1
@@ -37,15 +38,30 @@ RSpec.describe 'users/[:id]/posts/', type: :system do
   end
 
   it 'shows first comment on a post' do
+    visit user_posts_path(@id)
+    expect(page).to have_content('test comment 1')
   end
 
   it 'shows how many comments in a post' do
     visit user_posts_path(@id)
-    expect(page).to have_content('Comments: 2')
+    expect(page).to have_content('Comments: 3')
   end
 
   it 'shows how many likes in a post' do
     visit user_posts_path(@id)
     expect(page).to have_content('Likes: 3')
+  end
+
+  it 'shows pagination section' do
+    visit user_posts_path(@id)
+    expect(find_button('Pagination')).not_to be_nil
+  end
+
+  it 'redirects to post page when clicked on a post' do
+    post_id = User.first.posts.last.id
+    visit user_posts_path(@id)
+    click_link('Making the most out of LinkedIn connections')
+    sleep 1
+    expect(current_path).to eql("/users/#{@id}/posts/#{post_id}")
   end
 end

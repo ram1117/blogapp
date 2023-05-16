@@ -2,13 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'users/[:id]', type: :system do
   before :all do
-    Like.destroy_all
-    Comment.destroy_all
-    Post.destroy_all
-    User.destroy_all
-    require_relative '../test_data.rb'
     @id = User.first.id
   end
+
   it "shows user's profile picture" do
     visit user_path(@id)
     expect(page.all('img').length).to eql 1

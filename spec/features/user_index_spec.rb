@@ -1,13 +1,5 @@
 require 'rails_helper'
 RSpec.describe '/users/', type: :system do
-  before :all do
-    Like.destroy_all
-    Comment.destroy_all
-    Post.destroy_all
-    User.destroy_all
-    require_relative '../test_data.rb'
-  end
-
   it 'has other users' do
     visit users_path
     expect(page).to have_content('Ram Kumar')

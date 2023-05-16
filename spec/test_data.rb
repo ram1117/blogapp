@@ -24,9 +24,7 @@ third_user =
 first_post =
   Post.create(
     author: first_user,
-    title:
-      'My experiece
-    learning Rails ',
+    title: 'My experience learning Rails ',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     comments_counter: 0,
@@ -75,6 +73,10 @@ Comment.create(
   text:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
 )
+
+Comment.create(post: fourth_post, author: first_user, text: 'test comment 1')
+Comment.create(post: first_post, author: second_user, text: 'test comment 2')
+Comment.create(post: first_post, author: third_user, text: 'test comment 3')
 
 Like.create(author: first_user, post: fourth_post)
 Like.create(author: second_user, post: fourth_post)
