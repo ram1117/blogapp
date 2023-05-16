@@ -8,6 +8,7 @@ RSpec.describe 'Users', type: :request do
       posts_counter: 0,
     }
     @user = User.create! @valid_attributes
+    @id = @user.id
   end
   describe 'get /users' do
     it 'is valid response' do
@@ -27,17 +28,17 @@ RSpec.describe 'Users', type: :request do
 
   describe 'get /user=[:id]' do
     it 'is valid response' do
-      get '/users/1'
+      get "/users/#{@id}"
       expect(response).to have_http_status(200)
     end
     it 'is correct template rendered' do
-      get '/users/1'
+      get "/users/#{@id}"
       expect(response).to render_template 'users/show'
     end
 
     it 'response body has placeholder text' do
-      get '/users/1'
-      expect(response.body).to include('developer')
+      get "/users/#{@id}"
+      expect(response.body).to include('software engineer')
     end
   end
 end

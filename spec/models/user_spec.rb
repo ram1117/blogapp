@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  after :all do
+  after :example do
   end
   subject do
     User.new(name: 'ram', photo: 'someURL', bio: 'student', posts_counter: 0)

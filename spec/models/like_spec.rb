@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  before :all do
+  before :example do
     @user3 =
       User.create(
         name: 'Ben',
