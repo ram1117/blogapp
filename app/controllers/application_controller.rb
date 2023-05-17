@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def udpate_allowed_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |u|
-      u.permit(:name, :bio, :photo, :email, :password)
+      u.permit(:name, :bio, :photo, :email, :password, :password_confirmation)
     end
   end
 end

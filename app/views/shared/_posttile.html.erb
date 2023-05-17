@@ -7,7 +7,9 @@
   <%= link_to user_post_likes_path(user_id: post.author.id,post_id: post.id), data:{turbo_method: :post} do %>
   <button class="likes-btn">Like</button>
   <%end%>
-  <%= button_to "delete post",user_post_path(user_id: post.author.id,post_id:post.id), method: :delete,class: 'post-delete-btn' %>
+  <% if can? :destroy, post %>
+  <%= button_to "delete post",user_post_path(user_id: post.author.id,id:post.id), method: :delete,class: 'post-delete-btn' %>
+  <%end%>
   <p class="comments-likes" >Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%> </p>
   </div>
   <%end%>

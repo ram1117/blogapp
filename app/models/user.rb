@@ -19,7 +19,13 @@ class User < ApplicationRecord
               greater_than_or_equal_to: 0,
             }
 
+  Roles = %i[admin user]
+
   def last_three_posts
     posts.includes(:author).order(updated_at: :desc).limit(3)
+  end
+
+  def admin?
+    self.role == 'admin'
   end
 end
