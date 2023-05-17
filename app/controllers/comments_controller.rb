@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       Comment.create(
         post: post,
         author: current_user,
-        text: comment_params['text']
+        text: comment_params['text'],
       )
     if new_comment.valid?
       flash[:success] = 'commented successfully'
@@ -23,6 +23,9 @@ class CommentsController < ApplicationController
     else
       flash[:alert] = 'error creating comment'
     end
+  end
+
+  def destroy
   end
 
   private

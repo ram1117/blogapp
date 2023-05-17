@@ -19,7 +19,7 @@ class PostsController < ApplicationController
         title: post_params['title'],
         text: post_params['text'],
         likes_counter: 0,
-        comments_counter: 0
+        comments_counter: 0,
       )
 
     if @new_post.save
@@ -34,6 +34,9 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
     @comments = @post.comments.includes(:author)
+  end
+
+  def destroy
   end
 
   private
