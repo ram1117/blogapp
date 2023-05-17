@@ -2,6 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   attribute :posts_counter, default: 0
+
+  # possible values for User.role are 'admin' and 'user'. 'user' is default
+  attribute :role, default: 'user'
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -21,5 +24,9 @@ class User < ApplicationRecord
 
   def last_three_posts
     posts.includes(:author).order(updated_at: :desc).limit(3)
+  end
+
+  def admin?
+    role == 'admin'
   end
 end

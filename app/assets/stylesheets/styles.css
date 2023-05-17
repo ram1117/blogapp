@@ -93,6 +93,12 @@ a {
   padding: 1rem;
 }
 
+.comments-container > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .current-user {
   float: right;
 }
@@ -172,4 +178,13 @@ a {
 .new-post-btn {
   padding: 1rem;
   margin: 1rem auto;
+}
+
+.post-delete-btn {
+  float: right;
+  padding: 1rem;
+}
+
+.comment-delete-btn {
+  padding: 1rem;
 }

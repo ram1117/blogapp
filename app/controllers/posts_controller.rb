@@ -36,6 +36,17 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:author)
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    respond_to do |format|
+      format.html do
+        redirect_to user_posts_path(params[:user_id]),
+                    notice: 'post deleted successfully'
+      end
+    end
+  end
+
   private
 
   def post_params

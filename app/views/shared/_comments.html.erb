@@ -1,7 +1,12 @@
 <div class="comments-container">
 <h4>Comments:</h4>
 <% comments.each do |comment| %>
+<div>
 <p><%=comment.author.name %>: <%= comment.text%></p>
+<% if can? :destroy, comment %>
+<%= button_to "delete", user_post_comment_path(user_id:comment.author.id,post_id:comment.post.id,id:comment.id),method: :delete , class:'comment-delete-btn' %>
+<%end%>
+</div>
 <%end%>
 </div>
 
