@@ -1,14 +1,18 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @comment = Comment.new
-    @user = ApplicationController.current_user
+    @user = current_user
   end
 
   def create
-    user = ApplicationController.current_user
     post = Post.find(params[:post_id])
     new_comment =
-      Comment.create(post: post, author: user, text: comment_params['text'])
+      Comment.create(
+        post: post,
+        author: current_user,
+        text: comment_params['text']
+      )
     if new_comment.valid?
       flash[:success] = 'commented successfully'
       respond_to do |format|

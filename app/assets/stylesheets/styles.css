@@ -97,6 +97,51 @@ a {
   float: right;
 }
 
+.btn-log-out {
+  clear: right;
+  float: right;
+}
+
+.sign-up-form {
+  width: 60%;
+  margin: 10% auto;
+}
+
+.sign-field {
+  width: 100%;
+  margin: 1rem;
+}
+
+.sign-input-items {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.signin-signup-link {
+  float: right;
+}
+
+.signin-signup-link > a {
+  border: solid 1px black;
+  padding: 1rem;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-actions {
+  width: 100%;
+  margin: 1rem;
+}
+
+.sign-actions > input {
+  width: 100%;
+  padding: 1rem;
+}
+
 .posts_form {
   clear: both;
   width: 80%;
