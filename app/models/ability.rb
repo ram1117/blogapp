@@ -5,6 +5,7 @@ class Ability
     can %i[create destroy], Comment, author_id: user.id
 
     return unless user.admin?
+
     can :manage, :all
   end
 end
