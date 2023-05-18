@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :posts_counter,
             numericality: {
               only_integer: true,
-              greater_than_or_equal_to: 0
+              greater_than_or_equal_to: 0,
             }
 
   def last_three_posts
@@ -28,5 +28,9 @@ class User < ApplicationRecord
 
   def admin?
     role == 'admin'
+  end
+
+  def as_json(_options)
+    { id: self.id, name: self.name, bio: self.bio, posts: self.posts_counter }
   end
 end
