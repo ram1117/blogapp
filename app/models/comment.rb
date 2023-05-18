@@ -11,4 +11,8 @@ class Comment < ApplicationRecord
   def decrease_comments_counter
     post.decrement!(:comments_counter)
   end
+
+  def as_json(_options)
+    { id: id, text: text, author: author.name }
+  end
 end

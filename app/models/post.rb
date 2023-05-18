@@ -9,12 +9,12 @@ class Post < ApplicationRecord
   validates :comments_counter,
             numericality: {
               only_integer: true,
-              greater_than_or_equal_to: 0,
+              greater_than_or_equal_to: 0
             }
   validates :likes_counter,
             numericality: {
               only_integer: true,
-              greater_than_or_equal_to: 0,
+              greater_than_or_equal_to: 0
             }
 
   def update_posts_counter
@@ -30,6 +30,6 @@ class Post < ApplicationRecord
   end
 
   def as_json(_options = {})
-    { id: self.id, title: self.title, text: self.text }
+    { id: id, title: title, text: text }
   end
 end
