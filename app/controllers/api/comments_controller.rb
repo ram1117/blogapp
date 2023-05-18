@@ -6,9 +6,10 @@ class Api::CommentsController < Api::ApiController
   end
 
   def create
-    user = User.find(params[:user_id])
-    post = Post.find(params[:post_id])
-    new_comment = Comment.new(author: user, post: post, text: params[:text])
+    user = User.find(comment_params[:user_id])
+    post = Post.find(comment_params[:post_id])
+    new_comment =
+      Comment.new(author: user, post: post, text: comment_params[:text])
     if new_comment.save
       render json: 'comment saved successfully', status: 200
     else
