@@ -19,11 +19,11 @@ RSpec.configure do |config|
   # assertions if you prefer.
 
   config.before :suite do
-    Like.destroy_all
-    Comment.destroy_all
-    Post.destroy_all
-    User.destroy_all
-    require_relative './test_data'
+    # Like.destroy_all
+    # Comment.destroy_all
+    # Post.destroy_all
+    # User.destroy_all
+    # require_relative './test_data'
   end
 
   config.expect_with :rspec do |expectations|
