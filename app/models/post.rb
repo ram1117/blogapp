@@ -28,4 +28,8 @@ class Post < ApplicationRecord
   def last_five_comments
     comments.includes(:author).order(updated_at: :desc).limit(5)
   end
+
+  def as_json(_options = {})
+    { id: id, title: title, text: text }
+  end
 end

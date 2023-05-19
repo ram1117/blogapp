@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def admin?
     role == 'admin'
   end
+
+  def as_json(_options)
+    { id: id, name: name, bio: bio, posts: posts_counter }
+  end
 end
